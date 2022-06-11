@@ -14,92 +14,101 @@ public class Ejecutor3 {
 
         sc.useLocale(Locale.US);
 
-        String nombres,
-                apellidos,
-                identificacion;
-        int edad;
+        int op;
 
-        System.out.println("Ingrese sus nombres:");
-        nombres = sc.nextLine();
-        System.out.println("Ingrese sus apellidos:");
-        apellidos = sc.nextLine();
-        System.out.println("Ingrese su identificacion:");
-        identificacion = sc.nextLine();
-        System.out.println("Ingrese su edad:");
-        edad = sc.nextInt();
+        op = MiniMenu();
+                
 
-        if (edad != 0) {
+        switch (op) {
 
-            int op;
+            case 1:
+                
+                sc.nextLine();
 
-            op = MiniMenu();
+                EstudianteDistancia e1 = new EstudianteDistancia();
 
-            switch (op) {
+                String nombres,
+                 apellidos,
+                 identificacion;
+                int edad,
+                 numAsignaturas;
+                double costoAsignatura;
 
-                case 1:
+                System.out.println("Ingrese sus nombres:");
+                nombres = sc.nextLine();
+                
+                System.out.println("Ingrese sus apellidos:");
+                apellidos = sc.nextLine();
+                System.out.println("Ingrese su identificacion:");
+                identificacion = sc.nextLine();
+                System.out.println("Ingrese su edad:");
+                edad = sc.nextInt();
+                System.out.println("Ingrese numero de asignaturas:");
+                numAsignaturas = sc.nextInt();
+                sc.nextLine();
+                System.out.println("Ingrese el costo de asignatura:");
+                costoAsignatura = sc.nextDouble();
 
-                    sc.nextLine();
+                e1.establecerNombresEstudiante(nombres);
+                e1.establecerApellidoEstudiante(apellidos);
+                e1.establecerIdentificacionEstudiante(identificacion);
+                e1.establecerEdadEstudiante(edad);
+                e1.establecerNumeroAsginaturas(numAsignaturas);
+                e1.establecerCostoAsignatura(costoAsignatura);
+                e1.calcularMatriculaDistancia();
 
-                    EstudianteDistancia e1 = new EstudianteDistancia();
+                System.out.printf("%s\n", e1);
+                
+                
+                sc.nextLine();
 
-                    int numAsignaturas;
-                    double costoAsignatura;
+                break;
 
-                    System.out.println("Ingrese numero de asignaturas:");
-                    numAsignaturas = sc.nextInt();
-                    sc.nextLine();
-                    System.out.println("Ingrese el costo de asignatura:");
-                    costoAsignatura = sc.nextDouble();
+            case 2:
+                
+                sc.nextLine();
 
-                    e1.establecerNombresEstudiante(nombres);
-                    e1.establecerApellidoEstudiante(apellidos);
-                    e1.establecerIdentificacionEstudiante(identificacion);
-                    e1.establecerEdadEstudiante(edad);
-                    e1.establecerNumeroAsginaturas(numAsignaturas);
-                    e1.establecerCostoAsignatura(costoAsignatura);
-                    e1.calcularMatriculaDistancia();
+                EstudiantePresencial e2 = new EstudiantePresencial();
 
-                    System.out.printf("%s\n", e1);
+                String nombresP,
+                 apellidosP,
+                 identificacionP;
+                int edadP,
+                 numAsignaturasP;
+                double costoAsignaturaP;
 
-                    sc.nextLine();
+                System.out.println("Ingrese sus nombres:");
+                nombresP = sc.nextLine();
+                System.out.println("Ingrese sus apellidos:");
+                apellidosP = sc.nextLine();
+                System.out.println("Ingrese su identificacion:");
+                identificacionP = sc.nextLine();
+                System.out.println("Ingrese su edad:");
+                edadP = sc.nextInt();
+                System.out.println("Ingrese numero de asignaturas:");
+                numAsignaturasP = sc.nextInt();
+                sc.nextLine();
+                System.out.println("Ingrese el costo de asignatura:");
+                costoAsignaturaP = sc.nextDouble();
 
-                    break;
+                e2.establecerNombresEstudiante(nombresP);
+                e2.establecerApellidoEstudiante(apellidosP);
+                e2.establecerIdentificacionEstudiante(identificacionP);
+                e2.establecerEdadEstudiante(edadP);
+                e2.establecerNumeroCreditos(numAsignaturasP);
+                e2.establecerCostoCredito(costoAsignaturaP);
+                e2.calcularMatriculaPresencial();
 
-                case 2:
-                    
-                    sc.nextLine();
+                System.out.printf("%s\n", e2);
 
-                    EstudiantePresencial e2 = new EstudiantePresencial();
-
-                    int numAsignaturasP;
-                    double costoAsignaturaP;
-
-                    System.out.println("Ingrese numero de asignaturas:");
-                    numAsignaturasP = sc.nextInt();
-                    sc.nextLine();
-                    System.out.println("Ingrese el costo de asignatura:");
-                    costoAsignaturaP = sc.nextDouble();
-
-                    e2.establecerNombresEstudiante(nombres);
-                    e2.establecerApellidoEstudiante(apellidos);
-                    e2.establecerIdentificacionEstudiante(identificacion);
-                    e2.establecerEdadEstudiante(edad);
-                    e2.establecerNumeroCreditos(numAsignaturasP);
-                    e2.establecerCostoCredito(costoAsignaturaP);
-                    e2.calcularMatriculaPresencial();
-
-                    System.out.printf("%s\n", e2);
-
-                    break;
-
-                default:
-
-                    System.err.println("Numero Fuera de rango");
-
-                    break;
-
-            }
-
+                break;
+                
+            default:
+                
+                System.err.println("Numero Fuera de rango");
+                
+            break;
+                           
         }
 
     }
