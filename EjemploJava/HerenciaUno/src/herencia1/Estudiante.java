@@ -1,5 +1,5 @@
 
-package herenciauno;
+package herencia1;
 
 public class Estudiante {
     // 1.  Declarar
@@ -55,5 +55,7 @@ public class Estudiante {
     public int obtenerEdadEstudiante(){
         return edadEstudiante;
     }
+    
+    
 
 }
